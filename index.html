@@ -1,0 +1,45 @@
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#073042">
+<meta name="apple-mobile-web-app-title" content="SpreadMore">
+<link rel="apple-touch-icon" href="https://i.ibb.co/CpwN1rKZ/icon.png">
+<meta name="theme-color" content="#073042">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<title>SpreadMore QR</title>
+<script src="script.js"></script>
+<link rel="shortcut icon" href="https://i.ibb.co/CpwN1rKZ/icon.png" type="image/x-icon">
+<div class="container">
+    <h1>Gaming QR Generator</h1>
+    <div class="input-group">
+        <label for="amountInput">Amount (₹)</label>
+        <input type="number" id="amountInput" placeholder="Enter amount" min="1">
+    </div>
+    <button id="generateBtn">Generate QR Code</button>
+    <div id="qrCodeContainer">
+        <div id="qrWrapper">
+            <div class="gaming-elements">
+                <div class="gaming-element element-1"></div>
+                <div class="gaming-element element-2"></div>
+                <div class="gaming-element element-3"></div>
+            </div>
+            <div class="gamer-tag">SpreadMore</div>
+            <img crossOrigin="anonymous" src="https://i.ibb.co/CpwN1rKZ/icon.png" alt="Gaming Logo" class="logo">
+            <div class="qr-title"><strong>Always Spread More</strong></div>
+            <div id="qrCode"></div>
+            <div class="amount-display">Amount: ₹<span id="amountDisplay">0</span></div>
+            <div class="upi-id" id="upiDisplay">Upi ID: createprincemahto-2@okaxis</div>
+        </div>
+        <button id="downloadBtn" class="download-btn">Download QR Code</button>
+    </div>
+</div>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(function() {
+      console.log("Service Worker Registered");
+    });
+  }
+</script>
